@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  // State untuk menyimpan input pengguna
   const [walletAddress, setWalletAddress] = useState('');
   const [tokenAmount, setTokenAmount] = useState('');
 
+  // Fungsi untuk menangani form submit
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Mencegah form melakukan reload halaman
     alert(`Sending ${tokenAmount} tokens to ${walletAddress}`);
   };
 
@@ -14,6 +16,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Welcome to Airdrop App</h1>
+
+        {/* Form untuk input alamat dompet dan jumlah token */}
         <form onSubmit={handleSubmit}>
           <label>
             Wallet Address:
